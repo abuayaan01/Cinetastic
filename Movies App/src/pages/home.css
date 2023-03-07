@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+
+.movieDetails {
+  background-position: center !important;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+}
+
+.moviePoster img {
+  max-width: 300px;
+}
+
+.carouselDetails .title {
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+}
