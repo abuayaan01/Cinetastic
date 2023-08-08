@@ -2,12 +2,13 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 
-import ReactModal from "react-modal";
+// import ReactModal from "react-modal";
 
 function Modal({ movieId, active, setActive }) {
   const [id, setId] = useState("");
   const modalRef = useRef(null);
   useEffect(() => {
+    setId("");
     axios
       .get(
         "https://api.themoviedb.org/3/movie/" +
@@ -17,7 +18,13 @@ function Modal({ movieId, active, setActive }) {
       .then((res) => {
         // setId(res.results[0].key);
         console.log(res.data.results[0].key);
-        setId(res.data.results[0].key);
+        let tmp = res.data.results;
+        tmp.map((i) => {
+          if (i.type === "Trailer") {
+            setId(i.key);
+          }
+        });
+        // setId(res.data.results[0].key);
       })
       .catch((err) => {
         console.log(err);
@@ -35,6 +42,8 @@ function Modal({ movieId, active, setActive }) {
       document.removeEventListener("click", handleOutsideClick, true);
     };
   }, [movieId]);
+
+  // movieId
 
   if (!active) {
     return null;

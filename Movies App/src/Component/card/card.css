@@ -1,0 +1,11 @@
+.movieContainer {
+  min-width: 200px;
+  max-width: 200px;
+}
+
+@media screen and (max-width: 900px) {
+  .movieContainer {
+    min-width: 150px;
+    max-width: 150px;
+  }
+}

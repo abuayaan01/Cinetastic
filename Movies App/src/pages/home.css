@@ -4,13 +4,73 @@
   background-position: center !important;
   background-repeat: no-repeat;
   background-size: cover !important;
+  position: relative;
+}
+
+.movieDetails::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(0deg, rgb(0, 0, 0), transparent);
+}
+
+.movieDetails .lang {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0 30px 0 10px;
+  text-transform: uppercase;
+  border-left: 4px solid white;
 }
 
 .moviePoster img {
   max-width: 300px;
+  border-radius: 20px;
 }
 
 .carouselDetails .title {
   font-size: 3rem;
   font-family: "Roboto", sans-serif;
+}
+
+.carouselBtn > button:hover,
+.carouselBtn a:hover {
+  filter: brightness(0.6);
+}
+
+#root > div > div:nth-child(2) > div.carousel-root > div > p {
+  display: none;
+}
+
+@media screen and (max-width: 760px) {
+  .carouselDetails .title {
+    font-size: 8vw;
+  }
+  .desc {
+    font-size: 12px;
+  }
+  .control-dots .dot {
+    height: 3px !important;
+    width: 3px !important;
+    margin: 0 5px;
+  }
+  .control-dots {
+    display: none !important;
+  }
+  .moviePoster img {
+    display: none !important;
+    max-width: 150px;
+    border-radius: 20px;
+  }
+  .movieDetails::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(0deg, rgb(0, 0, 0), transparent);
+  }
+  .desc {
+    display: none;
+  }
 }

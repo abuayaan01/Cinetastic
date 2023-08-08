@@ -1,0 +1,30 @@
+.cardContainer {
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.cardContainer {
+  position: relative;
+}
+/* 
+.cardContainerOverlay::before {
+  content: "";
+  background: linear-gradient(270deg, black, transparent);
+  width: 10rem;
+  height: 300px;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+} */
+/* .cardContainer::after {
+  content: "";
+  background: linear-gradient(180deg, black, white);
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+} */

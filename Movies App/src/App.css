@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --green: #80f880;
+  --cyan: #38bdf8;
+  --darkCyan: #0f172a;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darkCyan);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--cyan);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 body {
@@ -20,5 +40,45 @@ body {
 }
 
 .navbar a:hover {
-  color: var(--green);
+  color: var(--cyan);
+}
+
+.mobileNavbar {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+@media screen and (max-width: 760px) {
+  .desktopNavbar {
+    display: none;
+  }
+
+  .carousel .control-arrow,
+  .carousel.carousel-slider .control-arrow {
+    z-index: 1 !important;
+    display: none !important;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .mobileNavbar {
+    display: flex;
+    flex-direction: column;
+    background: var(--darkCyan);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+  }
+
+  .mobileNavbar a {
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
 }
